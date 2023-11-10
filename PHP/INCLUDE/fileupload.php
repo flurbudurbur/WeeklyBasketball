@@ -35,7 +35,7 @@ if ((($_FILES["fl_file"]["type"] == "video/mp4"))
         $_FILES["fl_file"]["tmp_name"],
         $path = $_SERVER['DOCUMENT_ROOT'] . "/WeeklyBasketball/uploads/" . $_FILES["fl_file"]["name"]
       );
-      $stmt->bind_param("ssssss", $_POST['fl_title'], $_SESSION['email'], $_POST['fl_date'], $_POST['fl_club'], $_POST['fl_points'], $path);
+      $stmt->bind_param("ssssss", $_POST['fl_title'], $_SESSION['email'], $_POST['fl_date'], $_POST['fl_club'], $_POST['fl_points'], $_FILES["fl_file"]["name"]);
       if ($stmt->execute()) {
         echo "Data inserted successfully!";
       } else {
